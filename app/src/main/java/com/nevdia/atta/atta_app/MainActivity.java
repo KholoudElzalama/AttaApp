@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                         waited += 100;
                     }
                     Intent intent = new Intent(MainActivity.this,
-                            BrandsActivity.class);
+                            HomeActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     MainActivity.this.finish();
