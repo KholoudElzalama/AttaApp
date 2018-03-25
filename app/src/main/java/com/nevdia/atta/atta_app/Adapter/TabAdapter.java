@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.nevdia.atta.atta_app.Classes.FirstFragment;
+import com.nevdia.atta.atta_app.Classes.CategoriesFragment;
 import com.nevdia.atta.atta_app.Classes.FourthFragment;
-import com.nevdia.atta.atta_app.Classes.SecondFragment;
+import com.nevdia.atta.atta_app.Classes.BrandsFragment;
 import com.nevdia.atta.atta_app.Classes.ThirdFragment;
 
 
@@ -23,9 +23,9 @@ public class TabAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0 :
-               return new FirstFragment();
+               return new CategoriesFragment();
             case 1:
-               return  new SecondFragment();
+               return  new BrandsFragment();
 
             case 2:
                return new ThirdFragment();
