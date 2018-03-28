@@ -71,9 +71,12 @@ public class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.MyHolder> 
         }
 
 
+
         public void setData(Brands brands) {
             TitleTextView.setText(brands.getBrandName());
-            Picasso.with(context).load(brands.getImgSrc().toString()).into(imageView);
+
+           // Picasso.with(context).load(brands.getImgSrc().toString()).centerCrop().placeholder(R.drawable.logo).into(imageView);
+            Picasso.with(context).load(R.drawable.logo).into(imageView);
       }
 
     }

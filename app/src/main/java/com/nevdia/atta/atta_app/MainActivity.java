@@ -27,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         StartAnimations();
+
 
 
     }
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim.reset();
         linear = (LinearLayout) findViewById(R.id.lin_lay);
+
         linear.clearAnimation();
         linear.startAnimation(anim);
 

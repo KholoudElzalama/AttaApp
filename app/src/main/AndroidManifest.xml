@@ -9,9 +9,11 @@
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:supportsRtl="true">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,8 +21,35 @@
             </intent-filter>
         </activity>
         <activity android:name=".BrandsActivity" />
-        <activity android:name=".HomeActivity" />
-
+        <activity
+            android:name=".HomeActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".CategoriesActivity"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/ActionBar" />
+        <activity
+            android:name=".BrandsMenuActivity"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/ActionBar" />
+        <activity
+            android:name=".SparePartsMenuActivity"
+            android:label="SparePartsMenu"
+            android:parentActivityName=".CategoriesActivity"
+            android:theme="@style/ActionBar" />
+        <activity
+            android:name=".MainPartsMenuActivity"
+            android:parentActivityName=".CategoriesActivity"
+            android:theme="@style/ActionBar" />
+        <activity
+            android:name=".RepairActivity"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/ActionBar"
+            />
+        <activity android:name=".ContactUSActivity"
+            android:theme="@style/ActionBar"
+            android:label="ContactUs"
+            android:parentActivityName=".HomeActivity"></activity>
     </application>
 
 </manifest>
