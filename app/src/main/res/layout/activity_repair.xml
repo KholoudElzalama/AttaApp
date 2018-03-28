@@ -5,5 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.nevdia.atta.atta_app.RepairActivity">
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/testTxt"
+        android:textSize="30sp"/>
 </android.support.constraint.ConstraintLayout>

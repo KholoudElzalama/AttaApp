@@ -13,6 +13,6 @@ import retrofit2.http.Query;
  */
 
 public interface Apis {
-    @POST("")
-    Call<ArrayList<Brands>> getMyBrand();
+    @POST("webApis.php")
+    Call<ArrayList<Brands>> getMyBrand(@Query("retriveAllBrands") int retriveAllBrands);//this param to call funcation retriveAllBrands from webservice //
 }
