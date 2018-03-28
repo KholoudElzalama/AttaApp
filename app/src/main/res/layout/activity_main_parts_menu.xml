@@ -7,8 +7,10 @@
     android:orientation="vertical"
     tools:context="com.nevdia.atta.atta_app.MainPartsMenuActivity">
 
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/mainRec"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"/>
 </LinearLayout>

@@ -27,28 +27,34 @@
         <activity
             android:name=".CategoriesActivity"
             android:parentActivityName=".HomeActivity"
+            android:label="الاصناف"
             android:theme="@style/ActionBar" />
         <activity
             android:name=".BrandsMenuActivity"
             android:parentActivityName=".HomeActivity"
+            android:label="الماركات"
             android:theme="@style/ActionBar" />
         <activity
             android:name=".SparePartsMenuActivity"
-            android:label="SparePartsMenu"
+            android:label="قطع غيار"
             android:parentActivityName=".CategoriesActivity"
+
             android:theme="@style/ActionBar" />
         <activity
             android:name=".MainPartsMenuActivity"
             android:parentActivityName=".CategoriesActivity"
+            android:label="قطع رئيسية"
+
             android:theme="@style/ActionBar" />
         <activity
             android:name=".RepairActivity"
             android:parentActivityName=".HomeActivity"
+            android:label="الصيانة"
             android:theme="@style/ActionBar"
             />
         <activity android:name=".ContactUSActivity"
             android:theme="@style/ActionBar"
-            android:label="ContactUs"
+            android:label="اتصل بنا"
             android:parentActivityName=".HomeActivity"></activity>
     </application>
 

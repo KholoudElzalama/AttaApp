@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.nevdia.atta.atta_app.Classes.MainpartsClass;
+import com.nevdia.atta.atta_app.Classes.MainPartsClass;
 import com.nevdia.atta.atta_app.R;
 
 import java.util.ArrayList;
@@ -19,9 +19,9 @@ import java.util.ArrayList;
 
 public class MainPartsAdapter extends  RecyclerView.Adapter<MainPartsAdapter.MyHolder> {
     private Context context ;
-    private ArrayList<MainpartsClass> mainList;
+    private ArrayList<MainPartsClass> mainList;
 
-    public MainPartsAdapter(Context context, ArrayList<MainpartsClass> mainList) {
+    public MainPartsAdapter(Context context, ArrayList<MainPartsClass> mainList) {
         this.context = context;
         this.mainList = mainList;
     }
@@ -36,7 +36,7 @@ public class MainPartsAdapter extends  RecyclerView.Adapter<MainPartsAdapter.MyH
 
     @Override
     public void onBindViewHolder(MainPartsAdapter.MyHolder holder, int position) {
-        MainpartsClass mainpartsClass = mainList.get(position);
+        MainPartsClass mainpartsClass = mainList.get(position);
         holder.setData(mainpartsClass);
 
     }
@@ -62,9 +62,9 @@ public class MainPartsAdapter extends  RecyclerView.Adapter<MainPartsAdapter.MyH
 
         }
 
-        public void setData(MainpartsClass mainpartsClass) {
-            //TitleTextView.setText();
-           // Picasso.with(context).load(brands.getImgSrc().toString()).into();
+        public void setData(MainPartsClass mainpartsClass) {
+            TitleTextView.setText(mainpartsClass.getId());
+
         }
 
     }

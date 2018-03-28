@@ -7,8 +7,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by hadirsamir on 27/03/18.
  */
 
-public class SparePartsClass {
-
+public class MainPartsClass {
     @SerializedName("id")
     @Expose
     private String id;
@@ -75,5 +74,5 @@ public class SparePartsClass {
     public void setCreatedAt(Object createdAt) {
         this.createdAt = createdAt;
     }
-}
 
+}

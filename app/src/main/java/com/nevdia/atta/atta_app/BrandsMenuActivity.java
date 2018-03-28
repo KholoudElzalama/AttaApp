@@ -49,8 +49,8 @@ public class BrandsMenuActivity extends AppCompatActivity {
             public void onResponse(Call<ArrayList<Brands>> call, Response<ArrayList<Brands>> response) {
                 brandsArrayList = response.body();
                 int resCOde = response.code();
-                Log.d("Mazen3", "Test Result " + resCOde);
-                Log.d("Mazen3", "Test Result " + brandsArrayList.get(0).getBrandName());
+               // Log.d("Mazen3", "Test Result " + resCOde);
+                //Log.d("Mazen3", "Test Result " + brandsArrayList.get(0).getBrandName());
 
                 brandsAdapter = new BrandsAdapter(brandsArrayList, BrandsMenuActivity.this);
                 brandsRec.setAdapter(brandsAdapter);

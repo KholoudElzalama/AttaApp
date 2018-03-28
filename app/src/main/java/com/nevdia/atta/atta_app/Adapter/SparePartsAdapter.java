@@ -64,8 +64,8 @@ public class SparePartsAdapter extends RecyclerView.Adapter<SparePartsAdapter.My
         }
 
         public void setData( SparePartsClass sparePartsClass) {
-            //TitleTextView.setText();
-            // Picasso.with(context).load(brands.getImgSrc().toString()).into();
+            TitleTextView.setText(sparePartsClass.getMainData());
+
         }
 
     }
