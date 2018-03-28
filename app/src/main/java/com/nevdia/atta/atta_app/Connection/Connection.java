@@ -1,5 +1,7 @@
 package com.nevdia.atta.atta_app.Connection;
 
+import android.util.Log;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -9,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Connection {
 
-    public static final String Base_url = "http://193.227.14.31/garar/";
+    public static final String Base_url = "http://193.227.14.31/garar/webservices/";
     public static Retrofit retrofit = null;
 
     public static Retrofit connect(){
@@ -18,6 +20,7 @@ public class Connection {
             retrofit = new Retrofit.Builder().baseUrl(Base_url).
                     addConverterFactory(GsonConverterFactory.create()).build();
         }
+        Log.d("Mazen0","Test Result "+retrofit);
         return retrofit;
     }
 

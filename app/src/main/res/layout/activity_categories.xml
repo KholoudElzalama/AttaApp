@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/g2"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+
+        >
+
+
+        <Button
+            android:id="@+id/cat_btn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/smallbtn"
+            android:onClick="CatEvent"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:text="قطع رئيسية" />
+
+        <Button
+            android:id="@+id/spare_btn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/smallbtn"
+            android:onClick="SpareEvent"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:text="قطع غيار" />
+    </LinearLayout>
+</RelativeLayout>
