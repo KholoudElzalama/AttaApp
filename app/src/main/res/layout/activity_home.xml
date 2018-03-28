@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="com.nevdia.atta.atta_app.HomeActivity">
+
+    <com.daimajia.slider.library.SliderLayout
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <com.daimajia.slider.library.Indicators.PagerIndicator
+        android:id="@+id/custom_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+    </com.daimajia.slider.library.Indicators.PagerIndicator>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+       >
+
+        <Button
+            android:id="@+id/firstbtn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/large"
+            android:text="اصناف"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/secbtn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/large"
+            android:text="ماركات"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/thirdbtn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/large"
+            android:text="صيانة"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/fourthbtn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/large"
+            android:text="اتصل بنا"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
+</LinearLayout>
