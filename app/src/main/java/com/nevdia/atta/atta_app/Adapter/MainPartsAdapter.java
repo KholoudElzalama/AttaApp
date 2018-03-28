@@ -63,7 +63,7 @@ public class MainPartsAdapter extends  RecyclerView.Adapter<MainPartsAdapter.MyH
         }
 
         public void setData(MainPartsClass mainpartsClass) {
-            TitleTextView.setText(mainpartsClass.getId());
+            TitleTextView.setText(mainpartsClass.getMainData());
 
         }
 

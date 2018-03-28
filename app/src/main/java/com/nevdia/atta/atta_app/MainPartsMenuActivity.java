@@ -41,9 +41,9 @@ public class MainPartsMenuActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
-    private void getAllCats(int retriveAllCats){
+    private void getAllCats(int retriveAllMainEquipmentCats ){
         brandsApi = connection.connect().create(Apis.class);
-        Call<ArrayList<MainPartsClass>> call = brandsApi.getMyCats(retriveAllCats);
+        Call<ArrayList<MainPartsClass>> call = brandsApi.getMyCats(retriveAllMainEquipmentCats);
         call.enqueue(new Callback<ArrayList<MainPartsClass>>() {
             @Override
             public void onResponse(Call<ArrayList<MainPartsClass>> call, Response<ArrayList<MainPartsClass>> response) {

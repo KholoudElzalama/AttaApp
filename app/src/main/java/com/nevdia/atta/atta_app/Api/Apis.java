@@ -18,9 +18,9 @@ public interface Apis {
     @POST("webApis.php")
     Call<ArrayList<Brands>> getMyBrand(@Query("retriveAllBrands") int retriveAllBrands);//this param to call funcation retriveAllBrands from webservice //
     @POST("webApis.php")
-    Call<ArrayList<MainPartsClass>> getMyCats(@Query("retriveAllCats") int retriveAllCats);
+    Call<ArrayList<MainPartsClass>> getMyCats(@Query("retriveAllMainEquipmentCats") int retriveAllMainEquipmentCats);
     @POST("webApis.php")
-    Call<ArrayList<SparePartsClass>> getMySpare(@Query("retriveAllItems") int retriveAllItems);
+    Call<ArrayList<SparePartsClass>> getMySpare(@Query("retriveAllSparePartsCats") int retriveAllSparePartsCats);
 
 
 }

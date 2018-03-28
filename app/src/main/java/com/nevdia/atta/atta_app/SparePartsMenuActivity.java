@@ -41,9 +41,9 @@ public class SparePartsMenuActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-    private void getAllSpare(int retriveAllItems){
+    private void getAllSpare(int retriveAllSparePartsCats){
         brandsApi = connection.connect().create(Apis.class);
-        Call<ArrayList<SparePartsClass>> call = brandsApi.getMySpare(retriveAllItems);
+        Call<ArrayList<SparePartsClass>> call = brandsApi.getMySpare(retriveAllSparePartsCats);
         call.enqueue(new Callback<ArrayList<SparePartsClass>>() {
             @Override
             public void onResponse(Call<ArrayList<SparePartsClass>> call, Response<ArrayList<SparePartsClass>> response) {
