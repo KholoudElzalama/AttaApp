@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nevdia.atta.atta_app.Classes.SparePartsClass;
+
 public class SpareItemDetailsActivity extends AppCompatActivity {
     private TextView title ,price;
     private ImageView SpareImage;
+    private SparePartsClass sparePartsClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +19,7 @@ public class SpareItemDetailsActivity extends AppCompatActivity {
         title=(TextView)findViewById(R.id.textView4);
         price=(TextView)findViewById(R.id.textView5);
         SpareImage=(ImageView)findViewById(R.id.imageView3);
+        sparePartsClass=(SparePartsClass) getIntent().getExtras().getSerializable("Sparedata");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

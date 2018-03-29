@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nevdia.atta.atta_app.Classes.MainPartsClass;
+
 public class MainItemDetailsActivity extends AppCompatActivity {
   private TextView title,price;
   private ImageView MainImage;
+  private MainPartsClass mainPartsClass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,6 +18,10 @@ public class MainItemDetailsActivity extends AppCompatActivity {
         title=(TextView)findViewById(R.id.textView2);
         price=(TextView)findViewById(R.id.textView3);
         MainImage=(ImageView)findViewById(R.id.imageView2);
+
+        mainPartsClass=(MainPartsClass) getIntent().getExtras().getSerializable("Maindata");
+
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

@@ -2,6 +2,7 @@ package com.nevdia.atta.atta_app.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -67,12 +68,15 @@ public class SparePartsAdapter extends RecyclerView.Adapter<SparePartsAdapter.My
 
         }
 
-        public void setData( SparePartsClass sparePartsClass) {
+        public void setData(final SparePartsClass sparePartsClass) {
             TitleTextView.setText(sparePartsClass.getMainData());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, SpareItemDetailsActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("Sparedata",sparePartsClass);
+                    intent.putExtras(bundle);
                     context.startActivity(intent);
 
                 }

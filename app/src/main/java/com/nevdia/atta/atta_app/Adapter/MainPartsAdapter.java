@@ -2,6 +2,7 @@ package com.nevdia.atta.atta_app.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -66,7 +67,7 @@ public class MainPartsAdapter extends  RecyclerView.Adapter<MainPartsAdapter.MyH
 
         }
 
-        public void setData(MainPartsClass mainpartsClass) {
+        public void setData(final MainPartsClass mainpartsClass) {
 
             TitleTextView.setText(mainpartsClass.getMainData());
 
@@ -74,6 +75,9 @@ public class MainPartsAdapter extends  RecyclerView.Adapter<MainPartsAdapter.MyH
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, MainItemDetailsActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("Maindata",mainpartsClass);
+                    intent.putExtras(bundle);
                     context.startActivity(intent);
 
                 }
