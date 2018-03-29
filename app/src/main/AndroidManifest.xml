@@ -26,36 +26,38 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".CategoriesActivity"
-            android:parentActivityName=".HomeActivity"
             android:label="الاصناف"
+            android:parentActivityName=".HomeActivity"
             android:theme="@style/ActionBar" />
         <activity
             android:name=".BrandsMenuActivity"
-            android:parentActivityName=".HomeActivity"
             android:label="الماركات"
-            android:theme="@style/ActionBar" />
+            android:parentActivityName=".HomeActivity"
+            />
         <activity
             android:name=".SparePartsMenuActivity"
             android:label="قطع غيار"
             android:parentActivityName=".CategoriesActivity"
-
-            android:theme="@style/ActionBar" />
+             />
         <activity
             android:name=".MainPartsMenuActivity"
-            android:parentActivityName=".CategoriesActivity"
             android:label="قطع رئيسية"
-
-            android:theme="@style/ActionBar" />
+            android:parentActivityName=".CategoriesActivity"
+             />
         <activity
             android:name=".RepairActivity"
-            android:parentActivityName=".HomeActivity"
             android:label="الصيانة"
-            android:theme="@style/ActionBar"
-            />
-        <activity android:name=".ContactUSActivity"
-            android:theme="@style/ActionBar"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/ActionBar" />
+        <activity
+            android:name=".ContactUSActivity"
             android:label="اتصل بنا"
-            android:parentActivityName=".HomeActivity"></activity>
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/ActionBar" />
+        <activity android:name=".SpareItemDetailsActivity"
+            android:theme="@style/ActionBar"/>
+        <activity android:name=".MainItemDetailsActivity"
+            android:theme="@style/ActionBar"/>
     </application>
 
 </manifest>

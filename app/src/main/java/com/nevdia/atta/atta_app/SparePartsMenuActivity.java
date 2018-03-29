@@ -39,7 +39,7 @@ public class SparePartsMenuActivity extends AppCompatActivity {
 
         getAllSpare(1);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
     private void getAllSpare(int retriveAllSparePartsCats){
         brandsApi = connection.connect().create(Apis.class);

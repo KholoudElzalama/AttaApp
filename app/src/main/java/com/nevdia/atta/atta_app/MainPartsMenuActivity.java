@@ -38,7 +38,7 @@ public class MainPartsMenuActivity extends AppCompatActivity {
 
         getAllCats(1);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
     }
     private void getAllCats(int retriveAllMainEquipmentCats ){

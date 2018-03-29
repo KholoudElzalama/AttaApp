@@ -1,6 +1,7 @@
 package com.nevdia.atta.atta_app.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.nevdia.atta.atta_app.Classes.SparePartsClass;
 import com.nevdia.atta.atta_app.R;
+import com.nevdia.atta.atta_app.SpareItemDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -52,6 +54,7 @@ public class SparePartsAdapter extends RecyclerView.Adapter<SparePartsAdapter.My
 
         private TextView TitleTextView;
         private CardView cardView;
+        private View parent;
 
 
         public MyHolder(View itemView) {
@@ -59,12 +62,21 @@ public class SparePartsAdapter extends RecyclerView.Adapter<SparePartsAdapter.My
             cardView = (CardView) itemView.findViewById(R.id.card_view);
 
             TitleTextView = (TextView) itemView.findViewById(R.id.textView);
+            parent=itemView;
 
 
         }
 
         public void setData( SparePartsClass sparePartsClass) {
             TitleTextView.setText(sparePartsClass.getMainData());
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, SpareItemDetailsActivity.class);
+                    context.startActivity(intent);
+
+                }
+            });
 
         }
 

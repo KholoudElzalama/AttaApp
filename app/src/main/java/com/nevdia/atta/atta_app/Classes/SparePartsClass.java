@@ -3,11 +3,13 @@ package com.nevdia.atta.atta_app.Classes;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by hadirsamir on 27/03/18.
  */
 
-public class SparePartsClass {
+public class SparePartsClass implements Serializable{
 
     @SerializedName("id")
     @Expose

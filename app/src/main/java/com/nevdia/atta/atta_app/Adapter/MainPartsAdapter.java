@@ -1,6 +1,7 @@
 package com.nevdia.atta.atta_app.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.nevdia.atta.atta_app.Classes.MainPartsClass;
+import com.nevdia.atta.atta_app.MainItemDetailsActivity;
 import com.nevdia.atta.atta_app.R;
 
 import java.util.ArrayList;
@@ -51,6 +53,7 @@ public class MainPartsAdapter extends  RecyclerView.Adapter<MainPartsAdapter.MyH
 
         private TextView TitleTextView;
         private CardView cardView;
+        private View parent;
 
 
         public MyHolder(View itemView) {
@@ -58,12 +61,23 @@ public class MainPartsAdapter extends  RecyclerView.Adapter<MainPartsAdapter.MyH
             cardView = (CardView) itemView.findViewById(R.id.card_view);
 
             TitleTextView = (TextView) itemView.findViewById(R.id.textView);
+            parent =itemView;
 
 
         }
 
         public void setData(MainPartsClass mainpartsClass) {
+
             TitleTextView.setText(mainpartsClass.getMainData());
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, MainItemDetailsActivity.class);
+                    context.startActivity(intent);
+
+                }
+            });
 
         }
 
