@@ -32,6 +32,7 @@
         <activity
             android:name=".BrandsMenuActivity"
             android:label="الماركات"
+            android:theme="@style/AppTheme"
             android:parentActivityName=".HomeActivity"
             />
         <activity
