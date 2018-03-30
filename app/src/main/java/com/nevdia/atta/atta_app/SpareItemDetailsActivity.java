@@ -20,6 +20,7 @@ public class SpareItemDetailsActivity extends AppCompatActivity {
         price=(TextView)findViewById(R.id.textView5);
         SpareImage=(ImageView)findViewById(R.id.imageView3);
         sparePartsClass=(SparePartsClass) getIntent().getExtras().getSerializable("Sparedata");
+        title.setText(sparePartsClass.getMainData());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
