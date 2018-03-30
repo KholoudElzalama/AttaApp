@@ -30,6 +30,7 @@ public class MainPartsMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_parts_menu);
+
         MainRec=(RecyclerView)findViewById(R.id.mainRec);
         MainArrayList=new ArrayList<>();
 

@@ -37,11 +37,13 @@
         <activity
             android:name=".SparePartsMenuActivity"
             android:label="قطع غيار"
+            android:theme="@style/AppTheme"
             android:parentActivityName=".CategoriesActivity"
              />
         <activity
             android:name=".MainPartsMenuActivity"
             android:label="قطع رئيسية"
+            android:theme="@style/AppTheme"
             android:parentActivityName=".CategoriesActivity"
              />
         <activity
@@ -55,8 +57,10 @@
             android:parentActivityName=".HomeActivity"
             android:theme="@style/ActionBar" />
         <activity android:name=".SpareItemDetailsActivity"
+            android:parentActivityName=".SparePartsMenuActivity"
             android:theme="@style/ActionBar"/>
         <activity android:name=".MainItemDetailsActivity"
+            android:parentActivityName=".MainPartsMenuActivity"
             android:theme="@style/ActionBar"/>
     </application>
 
