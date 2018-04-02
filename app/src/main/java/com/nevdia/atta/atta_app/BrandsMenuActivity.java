@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.nevdia.atta.atta_app.Adapter.BrandsAdapter;
 import com.nevdia.atta.atta_app.Api.Apis;
@@ -24,12 +26,15 @@ public class BrandsMenuActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager manager;
     private Apis brandsApi;
     private Connection connection;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brands_menu);
         brandsRec = (RecyclerView) findViewById(R.id.brand_rec);
+        progressBar =(ProgressBar)findViewById(R.id.progress) ;
+        progressBar.setVisibility(View.VISIBLE);
         brandsArrayList = new ArrayList<>();
 
         manager = new LinearLayoutManager(this);
@@ -51,7 +56,7 @@ public class BrandsMenuActivity extends AppCompatActivity {
                 int resCOde = response.code();
                // Log.d("Mazen3", "Test Result " + resCOde);
                 //Log.d("Mazen3", "Test Result " + brandsArrayList.get(0).getBrandName());
-
+                progressBar.setVisibility(View.GONE);
                 brandsAdapter = new BrandsAdapter(brandsArrayList, BrandsMenuActivity.this);
                 brandsRec.setAdapter(brandsAdapter);
 

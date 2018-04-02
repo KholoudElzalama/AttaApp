@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
@@ -50,13 +49,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             TextSliderView textSliderView = new TextSliderView(this);
             // initialize a SliderLayout
             textSliderView
-                    .description(name)
+
                     .image(file_maps.get(name))
                     .setScaleType(BaseSliderView.ScaleType.Fit)
                     .setOnSliderClickListener(new BaseSliderView.OnSliderClickListener() {
                 @Override
                 public void onSliderClick(BaseSliderView slider) {
-                    Toast.makeText(HomeActivity.this,file_maps.get(name), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(HomeActivity.this,file_maps.get(name), Toast.LENGTH_SHORT).show();
                 }
             });
 

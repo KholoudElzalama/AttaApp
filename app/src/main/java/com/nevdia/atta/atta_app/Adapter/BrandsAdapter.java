@@ -3,6 +3,7 @@ package com.nevdia.atta.atta_app.Adapter;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,9 +75,13 @@ public class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.MyHolder> 
 
         public void setData(Brands brands) {
             TitleTextView.setText(brands.getBrandName());
+            try {
 
-           // Picasso.with(context).load(brands.getImgSrc().toString()).centerCrop().placeholder(R.drawable.logo).into(imageView);
-            Picasso.with(context).load(R.drawable.logo).into(imageView);
+                Picasso.with(context).load(brands.getImgSrc().toString()).centerCrop().placeholder(R.drawable.logo).into(imageView);
+            }
+            catch (Exception e){
+                Log.d("Brands Adapter","msg : "+e.toString());
+                Picasso.with(context).load(R.drawable.logo).into(imageView);}
       }
 
     }

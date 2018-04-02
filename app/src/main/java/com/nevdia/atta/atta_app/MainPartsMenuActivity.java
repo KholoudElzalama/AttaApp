@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.nevdia.atta.atta_app.Adapter.MainPartsAdapter;
 import com.nevdia.atta.atta_app.Api.Apis;
@@ -24,6 +26,7 @@ public class MainPartsMenuActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager manager;
     private Apis brandsApi;
     private Connection connection;
+    private ProgressBar progressBar;
 
 
     @Override
@@ -32,6 +35,8 @@ public class MainPartsMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_parts_menu);
 
         MainRec=(RecyclerView)findViewById(R.id.mainRec);
+        progressBar=(ProgressBar)findViewById(R.id.progress);
+        progressBar.setVisibility(View.VISIBLE);
         MainArrayList=new ArrayList<>();
 
         manager = new LinearLayoutManager(this);
@@ -52,7 +57,7 @@ public class MainPartsMenuActivity extends AppCompatActivity {
                 int resCOde = response.code();
                 Log.d("Mazen3","Test Result "+resCOde);
                 Log.d("Mazen3","Test Result "+MainArrayList.get(0).getId());
-
+                progressBar.setVisibility(View.GONE);
                 mainPartsAdapter = new MainPartsAdapter(MainPartsMenuActivity.this,MainArrayList);
                 MainRec.setAdapter(mainPartsAdapter);
 
