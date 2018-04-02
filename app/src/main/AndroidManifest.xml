@@ -31,19 +31,19 @@
         <activity
             android:name=".BrandsMenuActivity"
             android:label="الماركات"
-            android:theme="@style/AppTheme"
+            android:theme="@style/ActionBar"
             android:parentActivityName=".HomeActivity"
             />
         <activity
             android:name=".SparePartsMenuActivity"
             android:label="قطع غيار"
-            android:theme="@style/AppTheme"
+            android:theme="@style/ActionBar"
             android:parentActivityName=".CategoriesActivity"
              />
         <activity
             android:name=".MainPartsMenuActivity"
             android:label="قطع رئيسية"
-            android:theme="@style/AppTheme"
+            android:theme="@style/ActionBar"
             android:parentActivityName=".CategoriesActivity"
              />
         <activity

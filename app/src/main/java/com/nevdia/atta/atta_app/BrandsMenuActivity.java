@@ -1,5 +1,6 @@
 package com.nevdia.atta.atta_app;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -40,6 +41,11 @@ public class BrandsMenuActivity extends AppCompatActivity {
         manager = new LinearLayoutManager(this);
         brandsRec.setLayoutManager(manager);
         getAllBrands(1);
+        Drawable d = getResources().getDrawable(R.drawable.logo4);
+        getSupportActionBar().setBackgroundDrawable(d);
+        getSupportActionBar().setElevation(0);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
 
 
     }

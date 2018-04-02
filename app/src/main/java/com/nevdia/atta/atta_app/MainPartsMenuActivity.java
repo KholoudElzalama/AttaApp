@@ -1,5 +1,6 @@
 package com.nevdia.atta.atta_app;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,6 +28,7 @@ public class MainPartsMenuActivity extends AppCompatActivity {
     private Apis brandsApi;
     private Connection connection;
     private ProgressBar progressBar;
+    private Drawable d;
 
 
     @Override
@@ -43,6 +45,13 @@ public class MainPartsMenuActivity extends AppCompatActivity {
         MainRec.setLayoutManager(manager);
 
         getAllCats(1);
+        d= getResources().getDrawable(R.drawable.logo4);
+        getSupportActionBar().setBackgroundDrawable(d);
+        getSupportActionBar().setElevation(0);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
+
+
 
 
 

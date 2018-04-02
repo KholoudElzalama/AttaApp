@@ -22,9 +22,12 @@ public class CategoriesActivity extends AppCompatActivity implements View.OnClic
 
         categoryBtn.setOnClickListener(this);
         spareBtn.setOnClickListener(this);
-        d= getResources().getDrawable(R.drawable.shadow);
+        d= getResources().getDrawable(R.drawable.logo4);
         getSupportActionBar().setBackgroundDrawable(d);
+        getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
+
 
 
     }

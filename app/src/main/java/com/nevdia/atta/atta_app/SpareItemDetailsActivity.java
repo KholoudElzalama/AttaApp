@@ -1,5 +1,6 @@
 package com.nevdia.atta.atta_app;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -21,6 +22,10 @@ public class SpareItemDetailsActivity extends AppCompatActivity {
         SpareImage=(ImageView)findViewById(R.id.imageView3);
         sparePartsClass=(SparePartsClass) getIntent().getExtras().getSerializable("Sparedata");
         title.setText(sparePartsClass.getMainData());
+        Drawable d = getResources().getDrawable(R.drawable.logo4);
+        getSupportActionBar().setBackgroundDrawable(d);
+        getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
     }
 }

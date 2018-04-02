@@ -1,6 +1,7 @@
 package com.nevdia.atta.atta_app;
 
 import android.app.ActionBar;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
@@ -25,7 +26,11 @@ public class MainItemDetailsActivity extends AppCompatActivity {
         title.setText(mainPartsClass.getMainData());
 
 
+        Drawable d = getResources().getDrawable(R.drawable.logo4);
+        getSupportActionBar().setBackgroundDrawable(d);
+        getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
 
      //   actionBar.setIcon(R.drawable.logo2);
     }
