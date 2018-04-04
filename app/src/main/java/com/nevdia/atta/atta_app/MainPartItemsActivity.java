@@ -1,11 +1,15 @@
 package com.nevdia.atta.atta_app;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
 import com.nevdia.atta.atta_app.Adapter.BrandsAdapter;
+import com.nevdia.atta.atta_app.Adapter.MainItemAdapter;
 import com.nevdia.atta.atta_app.Api.Apis;
 import com.nevdia.atta.atta_app.Classes.Brands;
 import com.nevdia.atta.atta_app.Classes.MainPartItem;
@@ -19,20 +23,36 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainPartItemsActivity extends AppCompatActivity {
-
+    private RecyclerView MainRec;
     private Apis Api;
     private Connection connection;
     private ArrayList<MainPartItem> items;
     private MainPartsClass item;
+    private MainItemAdapter mainItemAdapter;
+    private Drawable d;
+
+
+    private  RecyclerView.LayoutManager manager;
     private final static  String TAG ="MainpartItemsActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_part_items);
+        MainRec = (RecyclerView) findViewById(R.id.recycle);
         items = new ArrayList<>();
        item = new MainPartsClass();
        item =(MainPartsClass) getIntent().getExtras().getSerializable("Maindata");
+        manager = new LinearLayoutManager(this);
+        MainRec.setLayoutManager(manager);
+        d= getResources().getDrawable(R.drawable.logo4);
         getAllItems(1,item.getId());
+
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(d);
+        getSupportActionBar().setElevation(0);
+
+        getSupportActionBar().setTitle("");
     }
     private void getAllItems(int retrieveAllItems , String id) {
         Api = connection.connect().create(Apis.class);
@@ -47,8 +67,8 @@ public class MainPartItemsActivity extends AppCompatActivity {
               Log.d(TAG, "Test Result " + items.get(0).getItemName());
                 //Log.d("Mazen3", "Test Result " + brandsArrayList.get(0).getBrandName());
                // progressBar.setVisibility(View.GONE);
-               // brandsAdapter = new BrandsAdapter(brandsArrayList, BrandsMenuActivity.this);
-               // brandsRec.setAdapter(brandsAdapter);
+                mainItemAdapter = new MainItemAdapter(MainPartItemsActivity.this, items,item);
+                MainRec.setAdapter(mainItemAdapter);
 
             }
 

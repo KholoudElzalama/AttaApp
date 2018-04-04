@@ -61,9 +61,11 @@
             android:name=".MainItemDetailsActivity"
             android:parentActivityName=".MainPartsMenuActivity"
             android:theme="@style/ActionBar" />
+
         <activity android:name=".MainPartItemsActivity"
             android:theme="@style/ActionBar"
             android:parentActivityName=".MainPartsMenuActivity"/>
+
         <activity android:name=".SparePartItemsActivity"
             android:theme="@style/ActionBar"
             android:parentActivityName=".SparePartsMenuActivity"></activity>

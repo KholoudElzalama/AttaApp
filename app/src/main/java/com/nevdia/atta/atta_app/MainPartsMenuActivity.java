@@ -48,8 +48,9 @@ public class MainPartsMenuActivity extends AppCompatActivity {
         d= getResources().getDrawable(R.drawable.logo4);
         getSupportActionBar().setBackgroundDrawable(d);
         getSupportActionBar().setElevation(0);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 
