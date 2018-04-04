@@ -12,10 +12,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.github.siyamed.shapeimageview.CircularImageView;
 import com.nevdia.atta.atta_app.Classes.MainPartItem;
 import com.nevdia.atta.atta_app.Classes.MainPartsClass;
+import com.nevdia.atta.atta_app.MainItemDetailsActivity;
 import com.nevdia.atta.atta_app.MainPartItemsActivity;
 import com.nevdia.atta.atta_app.R;
 import com.squareup.picasso.Picasso;
@@ -38,7 +41,7 @@ public class MainItemAdapter extends  RecyclerView.Adapter<MainItemAdapter.MyHol
     @Override
     public MainItemAdapter.MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view =layoutInflater.inflate(R.layout.mainparts_item,parent,false);
+        View view =layoutInflater.inflate(R.layout.main_part_items,parent,false);
         MainItemAdapter.MyHolder holder =new MainItemAdapter.MyHolder(view);
         return holder;
 
@@ -62,12 +65,13 @@ public class MainItemAdapter extends  RecyclerView.Adapter<MainItemAdapter.MyHol
         private TextView TitleTextView;
         private CardView cardView;
         private View parent;
+        private CircularImageView img;
 
 
         public MyHolder(View itemView) {
             super(itemView);
             cardView = (CardView) itemView.findViewById(R.id.card_view);
-
+            img =(CircularImageView)itemView.findViewById(R.id.img);
             TitleTextView = (TextView) itemView.findViewById(R.id.textView);
             parent =itemView;
 
@@ -78,32 +82,15 @@ public class MainItemAdapter extends  RecyclerView.Adapter<MainItemAdapter.MyHol
 
             TitleTextView.setText(mainpartitem.getItemName());
 
-            Picasso.with(context).load(BASEURL +mainPartsClass.getImgSrcMini()).into(new Target() {
-                @Override
-                public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                    cardView.setBackgroundDrawable(new BitmapDrawable(context.getResources(), bitmap));
-                   // Log.d(TAG,"done :D");
-                }
-
-                @Override
-                public void onBitmapFailed(Drawable errorDrawable) {
-                   // Log.d(TAG,"failed :(");
-                }
-
-                @Override
-                public void onPrepareLoad(Drawable placeHolderDrawable) {
-                   // Log.d(TAG,"loading..... :)");
-                   // Log.d(TAG,mainpartsClass.getImgSrcMini());
-
-                }
-            });
+            Picasso.with(context).load(BASEURL +mainpartitem.getImgSrcMini()).into(img);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, MainPartItemsActivity.class);
+                    Intent intent = new Intent(context, MainItemDetailsActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("Maindata", mainpartitem);
+                    bundle.putSerializable("Itemdata", mainPartsClass);
                     intent.putExtras(bundle);
                     context.startActivity(intent);
 

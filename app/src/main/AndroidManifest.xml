@@ -60,7 +60,7 @@
         <activity
             android:name=".MainItemDetailsActivity"
             android:parentActivityName=".MainPartsMenuActivity"
-            android:theme="@style/ActionBar" />
+            android:theme="@style/AppTheme" />
 
         <activity android:name=".MainPartItemsActivity"
             android:theme="@style/ActionBar"
