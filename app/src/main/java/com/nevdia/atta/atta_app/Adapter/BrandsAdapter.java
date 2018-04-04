@@ -24,7 +24,7 @@ public class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.MyHolder> 
     private ArrayList<Brands> list ;
     private Context context ;
 
-    public BrandsAdapter(ArrayList<Brands> list, Context context) {
+    public BrandsAdapter(ArrayList<Brands> list, Context context ) {
         this.list = list;
         this.context = context;
     }

@@ -2,9 +2,13 @@ package com.nevdia.atta.atta_app.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +16,10 @@ import android.widget.TextView;
 
 import com.nevdia.atta.atta_app.Classes.MainPartsClass;
 import com.nevdia.atta.atta_app.MainItemDetailsActivity;
+import com.nevdia.atta.atta_app.MainPartItemsActivity;
 import com.nevdia.atta.atta_app.R;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.ArrayList;
 
@@ -23,6 +30,8 @@ import java.util.ArrayList;
 public class MainPartsAdapter extends  RecyclerView.Adapter<MainPartsAdapter.MyHolder> {
     private Context context ;
     private ArrayList<MainPartsClass> mainList;
+    private  static  final String TAG = "Main parts adapter";
+    private static final String BASEURL = "http://193.227.14.31/garar/";
 
     public MainPartsAdapter(Context context, ArrayList<MainPartsClass> mainList) {
         this.context = context;
@@ -71,17 +80,37 @@ public class MainPartsAdapter extends  RecyclerView.Adapter<MainPartsAdapter.MyH
 
             TitleTextView.setText(mainpartsClass.getMainData());
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            Picasso.with(context).load(BASEURL + mainpartsClass.getImgSrcMini()).into(new Target() {
                 @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(context, MainItemDetailsActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("Maindata",mainpartsClass);
-                    intent.putExtras(bundle);
-                    context.startActivity(intent);
+                public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                    cardView.setBackgroundDrawable(new BitmapDrawable(context.getResources(), bitmap));
+                    Log.d(TAG,"done :D");
+                    }
 
-                }
-            });
+                    @Override
+                    public void onBitmapFailed(Drawable errorDrawable) {
+                        Log.d(TAG,"failed :(");
+                    }
+
+                    @Override
+                    public void onPrepareLoad(Drawable placeHolderDrawable) {
+                        Log.d(TAG,"loading..... :)");
+                        Log.d(TAG,mainpartsClass.getImgSrcMini());
+
+                    }
+                    });
+
+                    itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(context, MainPartItemsActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable("Maindata", mainpartsClass);
+                            intent.putExtras(bundle);
+                            context.startActivity(intent);
+
+                        }
+                    });
 
         }
 

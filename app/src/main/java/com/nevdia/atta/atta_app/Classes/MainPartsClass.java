@@ -21,10 +21,10 @@ public class MainPartsClass implements Serializable {
     private String type;
     @SerializedName("img_src")
     @Expose
-    private Object imgSrc;
+    private String imgSrc;
     @SerializedName("img_src_mini")
     @Expose
-    private Object imgSrcMini;
+    private String imgSrcMini;
     @SerializedName("created_at")
     @Expose
     private Object createdAt;
@@ -53,19 +53,19 @@ public class MainPartsClass implements Serializable {
         this.type = type;
     }
 
-    public Object getImgSrc() {
+    public String getImgSrc() {
         return imgSrc;
     }
 
-    public void setImgSrc(Object imgSrc) {
+    public void setImgSrc(String imgSrc) {
         this.imgSrc = imgSrc;
     }
 
-    public Object getImgSrcMini() {
+    public String getImgSrcMini() {
         return imgSrcMini;
     }
 
-    public void setImgSrcMini(Object imgSrcMini) {
+    public void setImgSrcMini(String imgSrcMini) {
         this.imgSrcMini = imgSrcMini;
     }
 

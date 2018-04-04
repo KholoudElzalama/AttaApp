@@ -1,6 +1,7 @@
 package com.nevdia.atta.atta_app.Api;
 
 import com.nevdia.atta.atta_app.Classes.Brands;
+import com.nevdia.atta.atta_app.Classes.MainPartItem;
 import com.nevdia.atta.atta_app.Classes.MainPartsClass;
 import com.nevdia.atta.atta_app.Classes.SparePartsClass;
 
@@ -21,6 +22,8 @@ public interface Apis {
     Call<ArrayList<MainPartsClass>> getMyCats(@Query("retriveAllMainEquipmentCats") int retriveAllMainEquipmentCats);
     @POST("webApis.php")
     Call<ArrayList<SparePartsClass>> getMySpare(@Query("retriveAllSparePartsCats") int retriveAllSparePartsCats);
+    @POST("webApis.php")
+    Call<ArrayList<MainPartItem>> getAllMainItems(@Query("retriveAllItemsById") int retriveAllSparePartsCats, @Query("id") String id);
 
 
 }
