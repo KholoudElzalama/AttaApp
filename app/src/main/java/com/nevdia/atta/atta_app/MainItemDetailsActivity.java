@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
 public class MainItemDetailsActivity extends AppCompatActivity {
-  private TextView title,price;
+  private TextView title,price,barcode;
   private ImageView MainImage;
   private MainPartItem mainPartsClass;
   private MainPartsClass mainPartItem;
@@ -30,15 +30,18 @@ public class MainItemDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_item_details);
-        title=(TextView)findViewById(R.id.textView2);
-        price=(TextView)findViewById(R.id.textView3);
-        MainImage=(ImageView)findViewById(R.id.imageView2);
+        title=(TextView)findViewById(R.id.label);
+        price=(TextView)findViewById(R.id.price);
+        barcode=(TextView)findViewById(R.id.code);
+       // MainImage=(ImageView)findViewById(R.id.imageView2);
         layout =(LinearLayout)findViewById(R.id.layout);
         img=(CircularImageView)findViewById(R.id.img);
 
         mainPartsClass=(MainPartItem) getIntent().getExtras().getSerializable("Maindata");
         mainPartItem =(MainPartsClass) getIntent().getExtras().getSerializable("Itemdata");
         title.setText(mainPartsClass.getItemName());
+        price.setText(mainPartsClass.getItemPrice());
+        barcode.setText(mainPartsClass.getBarcode());
 
 
 
