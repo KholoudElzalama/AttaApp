@@ -5,7 +5,7 @@
     android:id="@+id/relative"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/g2"
+    android:background="@drawable/bgfinal"
     >
 
 
@@ -21,29 +21,24 @@
 
         <Button
             android:id="@+id/cat_btn"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:background="@drawable/smallbtn"
-            android:onClick="CatEvent"
-            android:textColor="#fff"
+            android:background="@drawable/btn_bg"
             android:gravity="center"
-            android:text="قطع رئيسية" />
+            android:onClick="CatEvent"
+            android:text="قطع رئيسية"
+            android:textColor="#fff" />
 
         <Button
             android:id="@+id/spare_btn"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="12dp"
+
             android:layout_weight="1"
-            android:background="@drawable/smallbtn"
+            android:background="@drawable/btn_bg"
             android:onClick="SpareEvent"
             android:textColor="#fff"
             android:gravity="center"

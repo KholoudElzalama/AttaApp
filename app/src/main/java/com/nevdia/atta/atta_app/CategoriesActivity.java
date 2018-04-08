@@ -22,7 +22,7 @@ public class CategoriesActivity extends AppCompatActivity implements View.OnClic
 
         categoryBtn.setOnClickListener(this);
         spareBtn.setOnClickListener(this);
-        d= getResources().getDrawable(R.drawable.upper_screen);
+        d= getResources().getDrawable(R.drawable.upperheader);
         getSupportActionBar().setBackgroundDrawable(d);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -31,41 +31,41 @@
 
         <Button
             android:id="@+id/firstbtn"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:background="@drawable/large"
+            android:background="@drawable/btn_bg"
             android:text="اصناف"
             android:textColor="#fff" />
 
         <Button
             android:id="@+id/secbtn"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:background="@drawable/large"
+            android:background="@drawable/btn_bg"
             android:text="ماركات"
             android:textColor="#fff" />
 
         <Button
             android:id="@+id/thirdbtn"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:background="@drawable/large"
+            android:background="@drawable/btn_bg"
             android:text="صيانة"
             android:textColor="#fff" />
 
         <Button
             android:id="@+id/fourthbtn"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:background="@drawable/large"
+            android:background="@drawable/btn_bg"
             android:text="اتصل بنا"
             android:textColor="#fff" />
 
