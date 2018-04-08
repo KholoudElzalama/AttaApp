@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name=".HomeActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/ActionBar" />
         <activity
             android:name=".CategoriesActivity"
             android:label="الاصناف"

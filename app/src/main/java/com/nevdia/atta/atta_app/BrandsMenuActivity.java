@@ -41,7 +41,7 @@ public class BrandsMenuActivity extends AppCompatActivity {
         manager = new LinearLayoutManager(this);
         brandsRec.setLayoutManager(manager);
         getAllBrands(1);
-        Drawable d = getResources().getDrawable(R.drawable.logo4);
+        Drawable d = getResources().getDrawable(R.drawable.upperheader);
         getSupportActionBar().setBackgroundDrawable(d);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

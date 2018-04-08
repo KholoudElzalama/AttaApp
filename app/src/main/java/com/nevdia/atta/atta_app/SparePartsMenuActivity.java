@@ -44,7 +44,7 @@ public class SparePartsMenuActivity extends AppCompatActivity {
         spareRec.setLayoutManager(manager);
 
         getAllSpare(1);
-        d= getResources().getDrawable(R.drawable.logo4);
+        d= getResources().getDrawable(R.drawable.upperheader);
         getSupportActionBar().setBackgroundDrawable(d);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

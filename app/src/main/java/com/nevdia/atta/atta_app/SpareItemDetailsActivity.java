@@ -22,7 +22,7 @@ public class SpareItemDetailsActivity extends AppCompatActivity {
         SpareImage=(ImageView)findViewById(R.id.imageView3);
         sparePartsClass=(SparePartsClass) getIntent().getExtras().getSerializable("Sparedata");
         title.setText(sparePartsClass.getMainData());
-        Drawable d = getResources().getDrawable(R.drawable.logo4);
+        Drawable d = getResources().getDrawable(R.drawable.upperheader);
         getSupportActionBar().setBackgroundDrawable(d);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

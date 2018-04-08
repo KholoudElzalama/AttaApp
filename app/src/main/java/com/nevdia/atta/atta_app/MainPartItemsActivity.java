@@ -44,7 +44,7 @@ public class MainPartItemsActivity extends AppCompatActivity {
        item =(MainPartsClass) getIntent().getExtras().getSerializable("Maindata");
         manager = new LinearLayoutManager(this);
         MainRec.setLayoutManager(manager);
-        d= getResources().getDrawable(R.drawable.logo4);
+        d= getResources().getDrawable(R.drawable.upperheader);
         getAllItems(1,item.getId());
 
 

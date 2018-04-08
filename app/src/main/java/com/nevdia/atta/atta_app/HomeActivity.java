@@ -1,6 +1,7 @@
 package com.nevdia.atta.atta_app;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,6 +19,7 @@ import java.util.HashMap;
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     private Button catBtn,Brandbtn,repairBtn,contactBtn;
     private SliderLayout mDemoSlider;
+    private Drawable d;
 
 
 
@@ -44,6 +46,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         file_maps.put("truck5", R.drawable.g5);
 
 
+        d= getResources().getDrawable(R.drawable.upperheader);
+        getSupportActionBar().setBackgroundDrawable(d);
+        getSupportActionBar().setElevation(0);
+        getSupportActionBar().setTitle("");
 
         for(final String name : file_maps.keySet()){
             TextSliderView textSliderView = new TextSliderView(this);
