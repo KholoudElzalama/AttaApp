@@ -71,4 +71,7 @@
             android:parentActivityName=".SparePartsMenuActivity"></activity>
     </application>
 
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyBY4ftDMVqhTxG1HPjY1TRxcmEY1tc22kg"/>
 </manifest>
