@@ -30,7 +30,7 @@ public class SparePartsAdapter extends RecyclerView.Adapter<SparePartsAdapter.My
     private Context context ;
     private ArrayList<SparePartsClass> spareList;
     private  static  final String TAG = "Spare parts adapter";
-    private static final String BASEURL = "http://193.227.14.31/garar/";
+    private static final String BASEURL = "http://elatta-eg.com/";
 
     public SparePartsAdapter(Context context, ArrayList<SparePartsClass> spareList) {
         this.context = context;
@@ -78,26 +78,27 @@ public class SparePartsAdapter extends RecyclerView.Adapter<SparePartsAdapter.My
 
         public void setData(final SparePartsClass sparePartsClass) {
             TitleTextView.setText(sparePartsClass.getMainData());
-            Picasso.with(context).load(BASEURL + sparePartsClass.getImgSrcMini()).into(new Target() {
-                @Override
-                public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                    cardView.setBackgroundDrawable(new BitmapDrawable(context.getResources(), bitmap));
-                    Log.d(TAG,"done :D");
-                }
+            try {
+                Picasso.with(context).load(BASEURL + sparePartsClass.getImgSrcMini()).into(new Target() {
+                    @Override
+                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                        cardView.setBackgroundDrawable(new BitmapDrawable(context.getResources(), bitmap));
+                        Log.d(TAG, "done :D");
+                    }
 
-                @Override
-                public void onBitmapFailed(Drawable errorDrawable) {
-                    Log.d(TAG,"failed :(");
-                }
+                    @Override
+                    public void onBitmapFailed(Drawable errorDrawable) {
+                        Log.d(TAG, "failed :(");
+                    }
 
-                @Override
-                public void onPrepareLoad(Drawable placeHolderDrawable) {
-                    Log.d(TAG,"loading..... :)");
-                    Log.d(TAG,sparePartsClass.getImgSrcMini());
+                    @Override
+                    public void onPrepareLoad(Drawable placeHolderDrawable) {
+                        Log.d(TAG, "loading..... :)");
+                      //  Log.d(TAG, sparePartsClass.getImgSrcMini());
 
-                }
-            });
-
+                    }
+                });
+            }catch(Exception e){}
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

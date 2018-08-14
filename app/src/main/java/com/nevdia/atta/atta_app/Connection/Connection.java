@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Connection {
 
-    public static final String Base_url = "http://193.227.14.31/garar/webservices/";
+    public static final String Base_url = "http://elatta-eg.com/webservices/";
     public static Retrofit retrofit = null;
 
     public static Retrofit connect(){

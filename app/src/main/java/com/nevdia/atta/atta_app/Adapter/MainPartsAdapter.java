@@ -31,7 +31,7 @@ public class MainPartsAdapter extends  RecyclerView.Adapter<MainPartsAdapter.MyH
     private Context context ;
     private ArrayList<MainPartsClass> mainList;
     private  static  final String TAG = "Main parts adapter";
-    private static final String BASEURL = "http://193.227.14.31/garar/";
+    private static final String BASEURL = "http://elatta-eg.com/";
 
     public MainPartsAdapter(Context context, ArrayList<MainPartsClass> mainList) {
         this.context = context;
@@ -79,28 +79,29 @@ public class MainPartsAdapter extends  RecyclerView.Adapter<MainPartsAdapter.MyH
         public void setData(final MainPartsClass mainpartsClass) {
 
             TitleTextView.setText(mainpartsClass.getMainData());
+         try {
+           Picasso.with(context).load(BASEURL + mainpartsClass.getImgSrcMini()).into(new Target() {
+           @Override
+            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+            cardView.setBackgroundDrawable(new BitmapDrawable(context.getResources(), bitmap));
+            Log.d(TAG, "done :D");
+           }
 
-            Picasso.with(context).load(BASEURL + mainpartsClass.getImgSrcMini()).into(new Target() {
-                @Override
-                public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                    cardView.setBackgroundDrawable(new BitmapDrawable(context.getResources(), bitmap));
-                    Log.d(TAG,"done :D");
-                    }
+           @Override
+           public void onBitmapFailed(Drawable errorDrawable) {
+            Log.d(TAG, "failed :(");
+        }
 
-                    @Override
-                    public void onBitmapFailed(Drawable errorDrawable) {
-                        Log.d(TAG,"failed :(");
-                    }
+           @Override
+           public void onPrepareLoad(Drawable placeHolderDrawable) {
+             Log.d(TAG, "loading..... :)");
+            // Log.d(TAG,mainpartsClass.getImgSrcMini());
 
-                    @Override
-                    public void onPrepareLoad(Drawable placeHolderDrawable) {
-                        Log.d(TAG,"loading..... :)");
-                        Log.d(TAG,mainpartsClass.getImgSrcMini());
+             }
+             });
+         }catch (Exception e){}
 
-                    }
-                    });
-
-                    itemView.setOnClickListener(new View.OnClickListener() {
+          itemView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(context, MainPartItemsActivity.class);
@@ -110,7 +111,7 @@ public class MainPartsAdapter extends  RecyclerView.Adapter<MainPartsAdapter.MyH
                             context.startActivity(intent);
 
                         }
-                    });
+           });
 
         }
 

@@ -69,6 +69,10 @@
         <activity android:name=".SparePartItemsActivity"
             android:theme="@style/ActionBar"
             android:parentActivityName=".SparePartsMenuActivity"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/api_map_key" />
     </application>
 
 </manifest>

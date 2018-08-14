@@ -30,7 +30,7 @@ public class MainItemAdapter extends  RecyclerView.Adapter<MainItemAdapter.MyHol
     private Context context ;
     private ArrayList<MainPartItem> mainList;
     private MainPartsClass mainPartsClass;
-    private static final String BASEURL = "http://193.227.14.31/garar/";
+    private static final String BASEURL = "http://elatta-eg.com/";
 
     public MainItemAdapter(Context context, ArrayList<MainPartItem> mainList,MainPartsClass mainPartsClass) {
         this.context = context;
