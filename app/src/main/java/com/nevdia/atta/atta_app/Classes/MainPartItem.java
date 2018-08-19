@@ -35,6 +35,28 @@ public class MainPartItem implements Serializable{
     @SerializedName("created_at")
     @Expose
     private String createdAt;
+    @SerializedName("status")
+    @Expose
+    private String status;
+    @SerializedName("msg")
+    @Expose
+    private String msg;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
     public String getId() {
         return id;

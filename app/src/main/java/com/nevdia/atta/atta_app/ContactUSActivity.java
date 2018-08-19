@@ -15,7 +15,10 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.nevdia.atta.atta_app.Adapter.PhoneNumbersAdapter;
 
 import java.util.ArrayList;
@@ -24,7 +27,7 @@ public class ContactUSActivity extends AppCompatActivity implements OnMapReadyCa
 
     private Drawable d;
     private TextView tv_email, tv_fb;
-    private MapView map;
+    //private MapView map;
     private GoogleMap gmap;
     private RecyclerView rv_phones;
     private PhoneNumbersAdapter adapter;
@@ -50,17 +53,18 @@ public class ContactUSActivity extends AppCompatActivity implements OnMapReadyCa
 
         tv_email = findViewById(R.id.tv_email);
         tv_fb = findViewById(R.id.tv_fb);
-        map = findViewById(R.id.mapView);
+        //map = findViewById(R.id.mapView);
         rv_phones=findViewById(R.id.rv_phones);
 
 
-        map.getMapAsync(this);
+        //map.getMapAsync(this);
         tv_email.setText("mh_saadatta@yahoo.com");
         tv_fb.setText("شركة عطا للميكنة الزراعية");
         tv_fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/attaagriculture/?hc_ref=ARQcea7zbtv_KMH1DMZX0k6oEjYhvhUsinHXL3achCwcdpMMFYu7dck1spb3w8AD4O0&fref=tag")));
+
             }
         });
 
@@ -70,16 +74,22 @@ public class ContactUSActivity extends AppCompatActivity implements OnMapReadyCa
         rv_phones.setAdapter(adapter);
         rv_phones.setLayoutManager(manager);
 
-
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+        Log.d("mapFragment",""+mapFragment);
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        Log.d("MAP","readyyyyy");
-        gmap = googleMap;
-        gmap.setMinZoomPreference(12);
-        LatLng ny = new LatLng(40.7143528, -74.0059731);
-        gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));
+        Double lat=31.1149025;
+        Double lng =30.9330683;
+        Log.d("LocationActivity",""+lat+lng);
+        LatLng sydney = new LatLng(lat,lng);
+        Log.d("LocationActivity",""+sydney.latitude+","+sydney.longitude);
+        googleMap.addMarker(new MarkerOptions().position(sydney).title("شركة عطا للميكنة الزراعية"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,15.0f));
+
     }
 
 }

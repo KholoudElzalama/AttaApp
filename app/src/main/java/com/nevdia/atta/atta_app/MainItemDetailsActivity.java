@@ -18,13 +18,12 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
 public class MainItemDetailsActivity extends AppCompatActivity {
-  private TextView title,price,barcode;
+  private TextView title,price,barcode,info;
   private ImageView MainImage;
   private MainPartItem mainPartsClass;
   private MainPartsClass mainPartItem;
   private LinearLayout layout;
-  private CircularImageView img;
-    private static final String BASEURL = "http://193.227.14.31/garar/";
+    private static final String BASEURL = "http://elatta-eg.com/";
   ActionBar actionBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,21 +32,29 @@ public class MainItemDetailsActivity extends AppCompatActivity {
         title=(TextView)findViewById(R.id.label);
         price=(TextView)findViewById(R.id.price);
         barcode=(TextView)findViewById(R.id.code);
+        info=findViewById(R.id.info);
        // MainImage=(ImageView)findViewById(R.id.imageView2);
         layout =(LinearLayout)findViewById(R.id.layout);
-        img=(CircularImageView)findViewById(R.id.img);
+
+        Drawable d = getResources().getDrawable(R.drawable.upperheader);
+        getSupportActionBar().setBackgroundDrawable(d);
+        getSupportActionBar().setElevation(0);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
+
 
         mainPartsClass=(MainPartItem) getIntent().getExtras().getSerializable("Maindata");
         mainPartItem =(MainPartsClass) getIntent().getExtras().getSerializable("Itemdata");
-        title.setText(mainPartsClass.getItemName());
-        price.setText(mainPartsClass.getItemPrice());
-        barcode.setText(mainPartsClass.getBarcode());
+        title.setText(" الاســم : "+mainPartsClass.getItemName());
+        price.setText(" الســعر : "+mainPartsClass.getItemPrice()+" ج.م ");
+        barcode.setText(" الكــود : "+mainPartsClass.getBarcode());
+        info.setText(" الوصـــف : "+mainPartsClass.getItemDesc());
 
 
 
 
-
-        Picasso.with(this).load(BASEURL + mainPartItem.getImgSrcMini()).into(new Target() {
+        Log.d("Tag", mainPartsClass.getImgSrcMini());
+        Picasso.with(this).load(BASEURL + mainPartsClass.getImgSrcMini()).into(new Target() {
             @Override
             public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
                 layout.setBackgroundDrawable(new BitmapDrawable(getResources(), bitmap));
@@ -67,7 +74,7 @@ public class MainItemDetailsActivity extends AppCompatActivity {
             }
         });
 
-        Picasso.with(this).load(BASEURL+mainPartsClass.getImgSrcMini()).into(img);
+
 
      //   actionBar.setIcon(R.drawable.logo2);
     }

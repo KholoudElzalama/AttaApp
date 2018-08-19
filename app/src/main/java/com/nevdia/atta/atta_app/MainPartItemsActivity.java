@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.nevdia.atta.atta_app.Adapter.BrandsAdapter;
 import com.nevdia.atta.atta_app.Adapter.MainItemAdapter;
@@ -67,8 +68,12 @@ public class MainPartItemsActivity extends AppCompatActivity {
               Log.d(TAG, "Test Result " + items.get(0).getItemName());
                 //Log.d("Mazen3", "Test Result " + brandsArrayList.get(0).getBrandName());
                // progressBar.setVisibility(View.GONE);
+                if(items.get(0).getStatus()!=null){
+                    Toast.makeText(MainPartItemsActivity.this,"لا يوجد منتجات في هذا الصنف",Toast.LENGTH_LONG).show();
+                }
+                else {
                 mainItemAdapter = new MainItemAdapter(MainPartItemsActivity.this, items,item);
-                MainRec.setAdapter(mainItemAdapter);
+                MainRec.setAdapter(mainItemAdapter);}
 
             }
 

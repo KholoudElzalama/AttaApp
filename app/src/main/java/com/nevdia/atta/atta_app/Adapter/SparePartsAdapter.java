@@ -14,9 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.nevdia.atta.atta_app.Classes.MainPartsClass;
 import com.nevdia.atta.atta_app.Classes.SparePartsClass;
+import com.nevdia.atta.atta_app.MainPartItemsActivity;
 import com.nevdia.atta.atta_app.R;
-import com.nevdia.atta.atta_app.SpareItemDetailsActivity;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -102,9 +103,16 @@ public class SparePartsAdapter extends RecyclerView.Adapter<SparePartsAdapter.My
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, SpareItemDetailsActivity.class);
+                    Intent intent = new Intent(context, MainPartItemsActivity.class);
                     Bundle bundle = new Bundle();
-                    bundle.putSerializable("Sparedata",sparePartsClass);
+                    MainPartsClass main = new MainPartsClass();
+                    main.setId(sparePartsClass.getId());
+                    main.setCreatedAt(sparePartsClass.getCreatedAt());
+                    main.setImgSrc(sparePartsClass.getImgSrc());
+                    main.setImgSrcMini(sparePartsClass.getImgSrcMini());
+                    main.setMainData(sparePartsClass.getMainData());
+                    main.setType(sparePartsClass.getType());
+                    bundle.putSerializable("Maindata",main);
                     intent.putExtras(bundle);
                     context.startActivity(intent);
 

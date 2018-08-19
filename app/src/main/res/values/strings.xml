@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Atta_app</string>
+    <string name="app_name">Atta Equipments</string>
     <string name="api_map_key">AIzaSyBY4ftDMVqhTxG1HPjY1TRxcmEY1tc22kg</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
